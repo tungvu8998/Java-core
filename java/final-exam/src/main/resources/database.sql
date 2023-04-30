@@ -1,0 +1,15 @@
+DROP DATABASE IF EXISTS final_exam;
+CREATE DATABASE IF NOT EXISTS final_exam;
+USE final_exam;
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`(
+	id 			TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    full_name 	VARCHAR(50) NOT NULL,
+    email 		VARCHAR(50) UNIQUE NOT NULL,
+    `password` 	VARCHAR(12) NOT NULL ,
+	ex_in_year TINYINT UNSIGNED,
+    pro_skill 	VARCHAR(50) DEFAULT 'Java',
+    project_id TINYINT UNSIGNED,
+    `role`		ENUM('EMPLOYEE','MANAGER')
+);
